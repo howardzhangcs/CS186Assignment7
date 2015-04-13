@@ -28,6 +28,7 @@
 	document.write("Parameters of object = ("+obj.x+","+obj.y+") <br>");
 	// Function as parameter
 	// obj.add = function(x, y) { return x+y }					// ** TO-DO: This will need to be changed
+
 	obj.add = add;
 	document.write("obj.add(1,2) = "+obj.add(1,2)+" <br>");
 	
@@ -40,8 +41,8 @@
 		operation: "multiplication",
 		mul: function(a,b) { return a*b },
 		genprod: function(n,f) {
-			product = 1;
-			for(i=1; i<(n+1); i++){
+			var product = 1;
+			for(i=1; i<=n; i++){
 				product = this.mul(f(i),product);
 			}
 			return product;
